@@ -1,7 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using WebCRUD.DAL;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<FilmDBContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("ConnStr")));    
 
 var app = builder.Build();
 

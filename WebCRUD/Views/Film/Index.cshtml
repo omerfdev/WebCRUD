@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Film>
+
+    <table class="table table-stripped" >
+    @foreach(Film film in Model)
+    {
+        <tr>
+            <td>@film.FilmName</td>
+            <td>@film.Duration</td>
+            <td>@film.Description</td>
+            <td><a asp-action="Details" asp-route-id="@film.FilmID" class="btn btn-primary" > Details</a></td>
+        </tr>
+    }
+</table>
