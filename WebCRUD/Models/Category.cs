@@ -5,6 +5,6 @@
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }
 
-        public virtual Film Films { get; set; }
+        public virtual ICollection<Film>? Films { get; set; }
     }
 }
