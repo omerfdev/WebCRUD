@@ -1,13 +1,15 @@
 ﻿@model IEnumerable<Film>
+@foreach (Film film in Model)
+{
+    <div class="card d-inline-block">
 
-    <table class="table table-stripped" >
-    @foreach(Film film in Model)
-    {
-        <tr>
-            <td>@film.FilmName</td>
-            <td>@film.Duration</td>
-            <td>@film.Description</td>
-            <td><a asp-action="Details" asp-route-id="@film.FilmID" class="btn btn-primary" > Details</a></td>
-        </tr>
-    }
-</table>
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@film.FilmName</h5>
+            <p class="card-text">@film.Description</p>
+            <a asp-action="Details" asp-route-id="@film.FilmID" class="btn btn-primary">Künye</a>
+        </div>
+
+    </div>
+
+}
