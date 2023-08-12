@@ -12,7 +12,7 @@ using WebCRUD.DAL;
 namespace WebCRUD.Migrations
 {
     [DbContext(typeof(FilmDBContext))]
-    [Migration("20230810133233_init")]
+    [Migration("20230812191325_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -158,6 +158,10 @@ namespace WebCRUD.Migrations
                     b.Property<int>("ActorID")
                         .HasColumnType("int");
 
+                    b.Property<string>("ActorRole")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("FilmID")
                         .HasColumnType("int");
 
@@ -174,18 +178,21 @@ namespace WebCRUD.Migrations
                         {
                             FAID = 1,
                             ActorID = 1,
+                            ActorRole = "Arif Işık",
                             FilmID = 1
                         },
                         new
                         {
                             FAID = 2,
                             ActorID = 2,
+                            ActorRole = "Garavel",
                             FilmID = 1
                         },
                         new
                         {
                             FAID = 3,
                             ActorID = 3,
+                            ActorRole = "Mann",
                             FilmID = 2
                         });
                 });
@@ -193,7 +200,7 @@ namespace WebCRUD.Migrations
             modelBuilder.Entity("WebCRUD.Models.Film", b =>
                 {
                     b.HasOne("WebCRUD.Models.Category", "Category")
-                        .WithMany()
+                        .WithMany("Films")
                         .HasForeignKey("CategoryID");
 
                     b.Navigation("Category");
@@ -219,6 +226,11 @@ namespace WebCRUD.Migrations
                 });
 
             modelBuilder.Entity("WebCRUD.Models.Actor", b =>
+                {
+                    b.Navigation("Films");
+                });
+
+            modelBuilder.Entity("WebCRUD.Models.Category", b =>
                 {
                     b.Navigation("Films");
                 });

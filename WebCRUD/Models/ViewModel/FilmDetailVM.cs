@@ -8,7 +8,7 @@
         public string Description { get; set; }
         public string CategoryName { get; set; }
 
-        public ICollection<ActorVM> Actors { get; set; }
-        
+        public IList<ActorVM> Actors { get; set; } = new List<ActorVM>();
+
     }
 }

@@ -41,8 +41,10 @@ namespace WebCRUD.Controllers
                     ActorID = actor.ActorID,
                     FirstName = actor.Actor.FirstName,
                     LastName = actor.Actor.LastName,
+                    ActorRole=actor.ActorRole
 
                 };
+                filmDetailVM.Actors.Add(actorVM);
             }
             return View(filmDetailVM);
         }

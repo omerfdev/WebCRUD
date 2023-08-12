@@ -63,6 +63,7 @@ namespace WebCRUD.Migrations
                     FAID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ActorID = table.Column<int>(type: "int", nullable: false),
+                    ActorRole = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     FilmID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -114,18 +115,18 @@ namespace WebCRUD.Migrations
 
             migrationBuilder.InsertData(
                 table: "FilmActor",
-                columns: new[] { "FAID", "ActorID", "FilmID" },
-                values: new object[] { 1, 1, 1 });
+                columns: new[] { "FAID", "ActorID", "ActorRole", "FilmID" },
+                values: new object[] { 1, 1, "Arif Işık", 1 });
 
             migrationBuilder.InsertData(
                 table: "FilmActor",
-                columns: new[] { "FAID", "ActorID", "FilmID" },
-                values: new object[] { 2, 2, 1 });
+                columns: new[] { "FAID", "ActorID", "ActorRole", "FilmID" },
+                values: new object[] { 2, 2, "Garavel", 1 });
 
             migrationBuilder.InsertData(
                 table: "FilmActor",
-                columns: new[] { "FAID", "ActorID", "FilmID" },
-                values: new object[] { 3, 3, 2 });
+                columns: new[] { "FAID", "ActorID", "ActorRole", "FilmID" },
+                values: new object[] { 3, 3, "Mann", 2 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_FilmActor_ActorID",

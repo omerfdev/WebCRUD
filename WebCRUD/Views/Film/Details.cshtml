@@ -21,7 +21,15 @@
     <tr>
         <td></td>
         <td>
-            <ul></ul>
+            <ul>
+                @foreach(var item in Model.Actors)
+                    {
+                    <li>
+                        @item.FirstName  @item.LastName @item.ActorRole
+                    </li>
+                    }
+                
+            </ul>
         </td>
     </tr>
 </table>

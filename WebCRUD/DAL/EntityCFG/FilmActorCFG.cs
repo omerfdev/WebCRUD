@@ -11,9 +11,9 @@ namespace WebCRUD.DAL.EntityCFG
             builder.ToTable("FilmActor");
         
             builder.HasData(
-                new FilmActor { FilmID=1 ,FAID=1,ActorID=1},
-                new FilmActor { FilmID=1 ,FAID=2,ActorID=2},
-                new FilmActor { FilmID=2 ,FAID=3,ActorID=3}
+                new FilmActor { FilmID=1 ,FAID=1,ActorID=1,ActorRole="Arif Işık"},
+                new FilmActor { FilmID=1 ,FAID=2,ActorID=2, ActorRole = "Garavel" },
+                new FilmActor { FilmID=2 ,FAID=3,ActorID=3,ActorRole="Mann"}
                 );
         }
     }
