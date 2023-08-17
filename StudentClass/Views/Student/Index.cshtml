@@ -1,0 +1,71 @@
+﻿@using StudentClass.Models.ViewModels;
+@model StudentClassVM
+
+@{
+    ViewData["Title"] = "Index";
+    string[] renkler = { "success", "warning", "danger", "primary" };
+    int sayac = 0;
+}
+
+<h1>Index</h1>
+<div class="d-flex justify-content-end"> <a class="btn btn-outline-primary" asp-action="Create">Create</a></div>
+
+<a class="btn btn-info" asp-action="Index" asp-route-id="0">Tümünü Listele</a>
+
+@foreach (var item in Model.Class)
+{
+    <a class="btn btn-@renkler[sayac]" asp-action="Index" asp-route-id="@item.ClassID">@item.Degree/@item.ClassName</a>
+    sayac++;
+    if (sayac == renkler.Length) sayac = 0;
+}
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Student.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student.Adress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Students)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Class.Degree) /
+                    @Html.DisplayFor(modelItem => item.Class.ClassName)
+                </td>
+                <td>
+                    <a asp-action="Update" asp-route-id="@item.StudentID" class="btn btn-outline-warning">Update</a> |
+                    <a asp-action="Details" asp-route-id="@item.StudentID" class="btn btn-outline-warning">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.StudentID" class="btn btn-outline-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

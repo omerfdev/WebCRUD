@@ -1,0 +1,50 @@
+﻿@using StudentClass.Models.ViewModels;
+@model StudentClassVM
+
+
+<div class="row d-flex justify-content-center ">
+
+    <h4 class="justify-content-center d-flex text-center">Student @ViewData["baslik"]</h4>
+    <div class="col-md-4 bg-info">
+        <form asp-action=@ViewData["Title"]>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Student.FirstName" class="control-label"></label>
+                <input asp-for="Student.FirstName" class="form-control" />
+                <span asp-validation-for="Student.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Student.LastName" class="control-label"></label>
+                <input asp-for="Student.LastName" class="form-control" />
+                <span asp-validation-for="Student.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Student.Age" class="control-label"></label>
+                <input asp-for="Student.Age" class="form-control" />
+                <span asp-validation-for="Student.Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Student.Adress" class="control-label"></label>
+                <input asp-for="Student.Adress" class="form-control" />
+                <span asp-validation-for="Student.Adress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Student.ClassID" class="control-label"></label>
+                @Html.DropDownListFor(x=>x.Student.ClassID,Model.Dropdown,new{@class="form-control text-center"})
+                <span asp-validation-for="Student.ClassID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value=@ViewData["Title"] class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a class="justify-content-center d-flex text-center" asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

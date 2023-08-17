@@ -1,0 +1,52 @@
+﻿@using StudentClass.Models.Entities;
+@model List<Class>
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Kademe</th>
+            <th>Şube</th>
+            <th>Sınıf Mevcudu</th>
+            <th>Öğrenciler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Degree</td>
+                <td>@item.ClassName</td>
+                <td>@item.ClassStundentCount</td>
+                <td>
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-@item.ClassID" aria-expanded="false" aria-controls="flush-collapseOne">
+                                    Öğrencileri Göster
+                                </button>
+                            </h2>
+                            <div id="flush-@item.ClassID" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    @foreach (var item2 in item.Students)
+                                    {
+                                        <table>
+                                            <tr>
+                                                <td>@item2.FirstName-@item2.LastName</td>
+                                            </tr>
+                                        </table>
+                                    }
+                                </div>
+                                
+
+                            </div>
+                        </div>
+                        
+                    </div>
+                
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
