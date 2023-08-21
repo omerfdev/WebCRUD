@@ -5,7 +5,9 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebCRUD", "WebCRUD\WebCRUD.csproj", "{BC890D1D-A99F-4F91-8F18-6B40A1C2EBAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentClass", "StudentClass\StudentClass.csproj", "{B35A8DC6-AE37-4AF2-91CD-C46E8398671E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentClass", "StudentClass\StudentClass.csproj", "{B35A8DC6-AE37-4AF2-91CD-C46E8398671E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManyToManyMVC", "ManyToManyMVC\ManyToManyMVC.csproj", "{5E00254D-7E2A-4B0B-825A-BA1A6DED9113}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{B35A8DC6-AE37-4AF2-91CD-C46E8398671E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B35A8DC6-AE37-4AF2-91CD-C46E8398671E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B35A8DC6-AE37-4AF2-91CD-C46E8398671E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E00254D-7E2A-4B0B-825A-BA1A6DED9113}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E00254D-7E2A-4B0B-825A-BA1A6DED9113}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E00254D-7E2A-4B0B-825A-BA1A6DED9113}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E00254D-7E2A-4B0B-825A-BA1A6DED9113}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
