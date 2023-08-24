@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ManyToManyMVC.Context;
 using ManyToManyMVC.Models.Entities;
+using ManyToManyMVC.Models;
 
 namespace ManyToManyMVC.Controllers
 {
@@ -19,14 +20,16 @@ namespace ManyToManyMVC.Controllers
             _context = context;
         }
 
-        // GET: StudentCourse
-        public async Task<IActionResult> Index()
+        
+        public  IActionResult Index()
         {
-            var appDbContext = _context.StudentCourses.Include(s => s.Course).Include(s => s.Student);
-            return View(await appDbContext.ToListAsync());
+            var model = new StudentCourseModel();
+            model.Courses = _context.Course.Include(x => x.StudentCourses).ThenInclude(x => x.Student).ToList();   
+            model.Students=_context.Students.Include(x=>x.StudentCourses).ThenInclude(x=>x.Course).ToList();
+            return View(model);
         }
 
-        // GET: StudentCourse/Details/5
+        
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.StudentCourses == null)
@@ -46,7 +49,7 @@ namespace ManyToManyMVC.Controllers
             return View(studentCourse);
         }
 
-        // GET: StudentCourse/Create
+       
         public IActionResult Create()
         {
             ViewData["CourseID"] = new SelectList(_context.Course, "CourseID", "CourseID");
@@ -54,9 +57,7 @@ namespace ManyToManyMVC.Controllers
             return View();
         }
 
-        // POST: StudentCourse/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+     
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("StudentCourseID,CourseID,StudentID")] StudentCourse studentCourse)
@@ -72,7 +73,6 @@ namespace ManyToManyMVC.Controllers
             return View(studentCourse);
         }
 
-        // GET: StudentCourse/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.StudentCourses == null)
@@ -90,9 +90,7 @@ namespace ManyToManyMVC.Controllers
             return View(studentCourse);
         }
 
-        // POST: StudentCourse/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("StudentCourseID,CourseID,StudentID")] StudentCourse studentCourse)

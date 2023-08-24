@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentClass", "StudentClas
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManyToManyMVC", "ManyToManyMVC\ManyToManyMVC.csproj", "{5E00254D-7E2A-4B0B-825A-BA1A6DED9113}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IMDB", "..\IMDB\IMDB\IMDB.csproj", "{4F75DCC5-4426-4EA8-AE4A-15AD285F27E2}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{5E00254D-7E2A-4B0B-825A-BA1A6DED9113}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E00254D-7E2A-4B0B-825A-BA1A6DED9113}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E00254D-7E2A-4B0B-825A-BA1A6DED9113}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4F75DCC5-4426-4EA8-AE4A-15AD285F27E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4F75DCC5-4426-4EA8-AE4A-15AD285F27E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4F75DCC5-4426-4EA8-AE4A-15AD285F27E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4F75DCC5-4426-4EA8-AE4A-15AD285F27E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
