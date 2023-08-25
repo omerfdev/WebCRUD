@@ -1,0 +1,82 @@
+﻿@model List<Tarihce>
+<main>
+    <div class="tm-container-inner tm-history">
+        <div class="row">
+            <div class="col-12">
+                @foreach (var item in Model)
+                {
+                    if (item.Id == 1)
+                    {
+                        <div class="tm-history-inner">
+                            <img src="@item.Resim" alt="Image" class="img-fluid tm-history-img" />
+                            <div class="tm-history-text">
+                                <h4 class="tm-history-title">@item.Baslik</h4>
+                                <p class="tm-mb-p">@item.Aciklama</p>
+
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="tm-container-inner tm-featured-image">
+        <div class="row">
+            <div class="col-12">
+                @foreach (var item in Model)
+                {
+                    if (item.Id == 2)
+                    {
+                        <div class="placeholder-2">
+                            <div class="parallax-window-2" data-parallax="scroll" data-image-src="@item.Resim"></div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    <div class="tm-container-inner tm-features">
+        <div class="row">
+            <div class="col-lg-4">
+                @foreach (var item in Model)
+                {
+                    if (item.Id == 3)
+                    {
+                        <div class="tm-feature">
+                            <i class="@item.Resim"></i>
+                            <p class="tm-feature-description">@item.Aciklama</p>
+                            <a asp-action="Index" asp-controller="GizliBahce" class="tm-btn tm-btn-primary">Read More</a>
+                        </div>
+                    }
+                }
+            </div>
+            <div class="col-lg-4">
+                @foreach (var item in Model)
+                {
+                    if (item.Id == 4)
+                    {
+                        <div class="tm-feature">
+                            <i class="@item.Resim"></i>
+                            <p class="tm-feature-description">@item.Aciklama</p>
+                            <a asp-action="Index" asp-controller="GizliBahce" class="tm-btn tm-btn-success">Read More</a>
+                        </div>
+                    }
+                }
+            </div>
+            <div class="col-lg-4">
+                @foreach (var item in Model)
+                {
+                    if (item.Id == 5)
+                    {
+                        <div class="tm-feature">
+                            <i class="@item.Resim"></i>
+                            <p class="tm-feature-description">@item.Aciklama</p>
+                            <a asp-action="Index" asp-controller="GizliBahce" class="tm-btn tm-btn-danger">Read More</a>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,116 @@
+﻿@using System.Globalization;
+@model List<Urunler>
+
+<main>
+    <header class="row tm-welcome-section">
+        <h2 class="col-12 text-center tm-section-title">Gizli Bahçeye Hoşgeldiniz</h2>
+        <p class="col-12 text-center">Unutulmaz tatları farklı lokasyonlarda sunan Gizli Bahçe, dünyada ünlü şeflerinin ellerinden gurme lezzetleri ile paylaşılıyor.</p>
+    </header>
+
+    <div class="tm-paging-links">
+        <nav>
+            <ul>
+                <li class="tm-paging-item"><a href="#" class="tm-paging-link">All</a></li>
+                <li class="tm-paging-item"><a href="#" class="tm-paging-link active">Pizza</a></li>
+                <li class="tm-paging-item"><a href="#" class="tm-paging-link">Salad</a></li>
+                <li class="tm-paging-item"><a href="#" class="tm-paging-link">Noodle</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <div class="row tm-gallery">
+        <div id="tm-gallery-page-all" class="tm-gallery-page ">
+            @foreach (var meal in Model)
+            {               
+                    <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+                        <figure>
+                            <img src="@meal.UrunResim" alt="Image" class="img-fluid tm-gallery-img" />
+                            <figcaption>
+                            <a asp-action="Details" asp-route-id="@meal.UrunID"><h4 class="tm-gallery-title">@meal.UrunAd</h4></a>
+                            <p class="tm-gallery-description">@meal.UrunAciklama</p>
+                                <p class="tm-gallery-price">@meal.Fiyat.ToString("C")</p>
+                            </figcaption>
+                        </figure>
+                    </article>                
+            }
+
+        </div>
+        <div id="tm-gallery-page-pizza" class="tm-gallery-page hidden">
+            @foreach (var meal in Model)
+            {
+                if (meal.KategoriId == 1)
+                {
+                    <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+                        <figure>
+                        <img src="@meal.UrunResim" alt="Image" class="img-fluid tm-gallery-img" />
+                        <figcaption>
+                            <h4 class="tm-gallery-title">@meal.UrunAd</h4>
+                            <p class="tm-gallery-description">@meal.UrunAciklama</p>
+                                <p class="tm-gallery-price">@meal.Fiyat.ToString("C")</p>
+                        </figcaption>
+                    </figure>
+                </article>
+                }
+            }
+
+        </div>
+        <div id="tm-gallery-page-salad" class="tm-gallery-page hidden">
+            @foreach (var meal in Model)
+            {
+                if (meal.KategoriId == 2)
+                {
+                    <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+                        <figure>
+                            <img src="@meal.UrunResim" alt="Image" class="img-fluid tm-gallery-img" />
+                            <figcaption>
+                                <h4 class="tm-gallery-title">@meal.UrunAd</h4>
+                                <p class="tm-gallery-description">@meal.UrunAciklama</p>
+                                <p class="tm-gallery-price">@meal.Fiyat.ToString("C")</p>
+                            </figcaption>
+                        </figure>
+                    </article>
+                }
+            }
+
+        </div>        
+        <div id="tm-gallery-page-noodle" class="tm-gallery-page hidden">
+
+            @foreach (var meal in Model)
+            {
+                if (meal.KategoriId == 3)
+                {
+                    <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+                        <figure>
+                            <img src="@meal.UrunResim" alt="Image" class="img-fluid tm-gallery-img" />
+                            <figcaption>
+                                <h4 class="tm-gallery-title">@meal.UrunAd</h4>
+                                <p class="tm-gallery-description">@meal.UrunAciklama</p>
+                                <p class="tm-gallery-price">@meal.Fiyat.ToString("C")</p>
+                            </figcaption>
+                        </figure>
+                    </article>
+                }
+            }
+
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Handle click on paging links
+            $('.tm-paging-link').click(function (e) {
+                e.preventDefault();
+
+                var page = $(this).text().toLowerCase();
+                $('.tm-gallery-page').addClass('hidden');
+                $('#tm-gallery-page-' + page).removeClass('hidden');
+                $('.tm-paging-link').removeClass('active');
+                $(this).addClass("active");
+            });
+        });
+    </script>
+   
+</main>

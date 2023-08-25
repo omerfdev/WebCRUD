@@ -1,0 +1,15 @@
+﻿@model Urunler
+
+<div class="container">
+    <div class="row">       
+        <div class="col-sm m-lg-9">
+            <img src="@Model.UrunResim" />
+        </div>
+        <div class="col-sm">
+            <h3 style="color:dodgerblue">@Model.UrunAd</h3>
+            <h5 style="color:hotpink">@Model.Kategori.KategoriAd</h5>
+            <p>@Model.UrunAciklama</p>
+            <p>@Model.Fiyat.ToString("C")</p>
+        </div>
+    </div>
+</div>
