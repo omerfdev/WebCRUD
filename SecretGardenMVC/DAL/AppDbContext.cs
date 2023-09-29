@@ -1,5 +1,6 @@
-﻿using GizliBahceMVC.Models.Entitites;
+﻿
 using Microsoft.EntityFrameworkCore;
+using SecretGardenMVC.Models.Entitites;
 
 namespace GizliBahceMVC.DAL
 {

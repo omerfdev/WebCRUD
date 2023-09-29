@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace GizliBahceMVC.Models.Entitites
+namespace SecretGardenMVC.Models.Entitites
 {
     public class Kategori
     {

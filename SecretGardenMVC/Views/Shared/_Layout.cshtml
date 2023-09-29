@@ -3,47 +3,42 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - SecretGardenMVC</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/SecretGardenMVC.styles.css" asp-append-version="true" />
+    <title>@ViewData["Title"] - Secret Garden's</title> @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@ @* <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" /> *@
+    <link rel="stylesheet" href="~/Content/css/templatemo-style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Content/css/all.min.css" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/ff88bd7802.js" crossorigin="anonymous"></script> @* <link rel="stylesheet" href="~/MVC_Sinav.styles.css" asp-append-version="true" /> *@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SecretGardenMVC</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+        <div class="container">
+            <div class="placeholder">
+                <div class="parallax-window" data-parallax="scroll" data-image-src="/Content/img/simple-house-01.jpg">
+                    <div class="tm-header">
+                        <div class="row tm-header-inner">
+                            <div class="col-md-6 col-12">
+                                <img src="~/Content/img/simple-house-logo.png" alt="Logo" class="tm-site-logo" />
+                                <div class="tm-site-text-box">
+                                    <h1 class="tm-site-title">Gizli Bahçe</h1>
+                                    <h6 class="tm-site-description">Restoran</h6>
+                                </div>
+                            </div>
+                            <nav class="col-md-6 col-12 tm-nav">
+                                <ul class="tm-nav-ul">
+                                    <li class="tm-nav-li"><a asp-controller="SecretGarden" asp-action="Index" class="tm-nav-link active">Ana Sayfa</a></li>
+                                    <li class="tm-nav-li"><a asp-controller="SecretGarden" asp-action="About" class="tm-nav-link">Hakkımızda</a></li>
+                                    <li class="tm-nav-li"><a asp-controller="SecretGarden" asp-action="History" class="tm-nav-link">Tarihçe</a></li>
+                                    <li class="tm-nav-li"><a asp-controller="SecretGarden" asp-action="Contact" class="tm-nav-link">İletişim</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - SecretGardenMVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    <div class="container"> <main role="main" class="pb-3"> @RenderBody() </main> <footer class="tm-footer text-center"> <p> Copyright &copy; 2020 Simple House | Design: <a rel="nofollow" href="https://templatemo.com">TemplateMo</a> </p> </footer> </div>
+    <script src="~/Content/js/jquery.min.js"></script>
+    <script src="~/Content/js/parallax.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> @* <script src="~/Content/js/site.js" asp-append-version="true"></script> *@ @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

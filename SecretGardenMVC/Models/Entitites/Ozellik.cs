@@ -1,4 +1,4 @@
-﻿namespace GizliBahceMVC.Models.Entitites
+﻿namespace SecretGardenMVC.Models.Entitites
 {
     public class Ozellik
     {

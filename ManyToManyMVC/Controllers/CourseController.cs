@@ -19,7 +19,7 @@ namespace ManyToManyMVC.Controllers
             _context = context;
         }
 
-       
+      
         public async Task<IActionResult> Index()
         {
               return _context.Course != null ? 
