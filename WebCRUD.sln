@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentClass", "StudentClas
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManyToManyMVC", "ManyToManyMVC\ManyToManyMVC.csproj", "{5E00254D-7E2A-4B0B-825A-BA1A6DED9113}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecretGardenMVC", "SecretGardenMVC\SecretGardenMVC.csproj", "{3FD4C7FB-87B5-4E8C-900A-60781DEDAD0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecretGardenMVC", "SecretGardenMVC\SecretGardenMVC.csproj", "{3FD4C7FB-87B5-4E8C-900A-60781DEDAD0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegisterLoginPage", "RegisterLoginPage\RegisterLoginPage.csproj", "{8377BDCC-74AE-4D5D-8DE9-AFEA065304B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{3FD4C7FB-87B5-4E8C-900A-60781DEDAD0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FD4C7FB-87B5-4E8C-900A-60781DEDAD0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FD4C7FB-87B5-4E8C-900A-60781DEDAD0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8377BDCC-74AE-4D5D-8DE9-AFEA065304B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8377BDCC-74AE-4D5D-8DE9-AFEA065304B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8377BDCC-74AE-4D5D-8DE9-AFEA065304B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8377BDCC-74AE-4D5D-8DE9-AFEA065304B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
