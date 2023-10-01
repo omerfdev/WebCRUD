@@ -100,23 +100,29 @@ logo {
 	justify-content: center;
 	align-items: center;
 	display:flex;
-	/*overflow:hidden;*/
-	transition: height .2s ease;
+	overflow:hidden;
+	transform:scale(0);
+	transition: transform .5s ease, height .2s ease;
 }
 
-.wrappper.active {
+.wrapper.active {
 	height: 520px;
 }
 
-.wrapper .form-box {
-	width: 100%;
-	padding: 40px;
-}
+
+	.wrapper.active-popup {
+		transform: scale(1);
+	}
+
+	.wrapper .form-box {
+		width: 100%;
+		padding: 40px;
+	}
 
 	.wrapper .form-box.login {
-		display:none;
-		/*transition: transform .18s ease;
-		transform: translateX(0);*/
+		/*display:none;*/
+		transition: transform .18s ease;
+		transform: translateX(0);
 	}
 
 .wrapper.active .form-box.login {
@@ -130,7 +136,7 @@ logo {
 	transform: translateX(400px);
 }
 
-.wrapper .form-box.register {
+.wrapper.active .form-box.register {
 	transition: transform .18s ease;
 	transform: translateX(0);
 }
