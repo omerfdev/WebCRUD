@@ -13,3 +13,8 @@ Veri Al ve Arayüzü Göster
 
 ### SecretGarden
 ![secretGarden](https://github.com/omerfdev/WebCRUD/raw/master/SecretGardenMVC/Opera%20Snapshot_2024-02-19_172103_localhost.png)
+---
+
+### StudentClass
+![studentClass](https://github.com/omerfdev/WebCRUD/blob/master/StudentClass/Opera%20Snapshot_2024-02-19_173858_localhost.png)
+![studentClass](https://github.com/omerfdev/WebCRUD/blob/master/StudentClass/Opera%20Snapshot_2024-02-19_173826_localhost.png)
